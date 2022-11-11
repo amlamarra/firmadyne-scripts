@@ -1,6 +1,22 @@
 # firmadyne-scripts
 This a collection of scripts I use when emulating devices with Firmadyne
 
+## emulate.sh
+
+This script automates the Firmadyne setup process to emulate firmware.
+
+### Usage
+
+```
+$ ./emulate.sh
+./emulate.sh <VENDOR> <PATH_TO_FIRMWARE>
+```
+
+1. Place this script in (or link it to) Firmadyne's root directory
+2. Run the script while providing the vendor name and path the firmware file as arguments
+3. All of the following actions will occur: https://github.com/firmadyne/firmadyne#usage
+4. If successful, you should have a `run.sh` script in your `firmadyne/scratch/$IID/` directory
+
 ## convert_nvram.sh
 
 ### About
@@ -26,6 +42,13 @@ lan_wps_oob=enabled
 ```
 
 ### Usage
+
+```
+$ ./convert_nvram.sh
+Provide nvram filename & Firmadyne image ID.
+Usage: ./convert_nvram.sh <FILENAME> <ID>
+Example: ./convert_nvram.sh ~/nvram.ini 1
+```
 
 Place this script in (or link it to) Firmadyne's root directory:
 ```
@@ -72,7 +95,7 @@ nvram_get_int: sw_mode
 nvram_get_int: = 1
 ```
 
-## Symbol Search
+## symbol_search.sh
 
 Have you ever found an imported symbol (e.g. variable or function) and wondered which of the binary's shared libraries it came from?
 
@@ -85,7 +108,8 @@ This can help you figure it out.
 ### Usage
 
 ```
-./symbol_search.sh BINARY SYMBOL
+$ ./symbol_search.sh
+Usage: ./symbol_search.sh <BINARY> <SYMBOL>
 ```
 
 **Example:**

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+# Automate the Firmadyne setup process
+
 usage() {
-    echo "$0 <vendor> <path_to_firmware>"
+    echo "$0 <VENDOR> <PATH_TO_FIRMWARE>"
     exit 1
 }
 

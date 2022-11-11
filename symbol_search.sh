@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
+
 # Search a binary's imported libraries for a specific symbol to see which library has it.
 # Dependencies: readelf
 
-#set -x
+usage() {
+    echo "Usage: $0 <BINARY> <SYMBOL>"
+    exit 1
+}
 
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 BINARY SYMBOL"
-    exit 1
+    usage
 fi
 
 search_dir=./root

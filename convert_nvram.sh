@@ -3,11 +3,15 @@
 # This script takes the nvram.ini file and converts it
 # Firmadyne wants each key to be a separate file in libnvram.override
 
-if [ $# -ne 2 ]; then
+usage() {
     echo "Provide nvram filename & Firmadyne image ID."
     echo "Usage: $0 <FILENAME> <ID>"
     echo "Example: $0 ~/nvram.ini 1"
     exit 1
+}
+
+if [ $# -ne 2 ]; then
+    usage
 fi
 
 sudo ./scripts/mount.sh "$2"
